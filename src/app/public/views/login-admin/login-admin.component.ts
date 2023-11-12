@@ -16,4 +16,8 @@ export class LoginAdminComponent  implements OnInit {
     this.router.navigate(["./auth/login"]);
 }
 
+homeadmin(){
+  this.router.navigate(["home-admin"]);
+}
+
 }

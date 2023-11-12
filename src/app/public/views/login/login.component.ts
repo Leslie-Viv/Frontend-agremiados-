@@ -21,6 +21,10 @@ export class LoginComponent  implements OnInit {
     })
   }
 
+  conve(){
+    this.router.navigate(["covenios"]);
+}
+
   onSubmit(form:FormGroup){
     if(form.valid){
       this.authService.login(form.value.email, form.value.password).subscribe(data=>{
@@ -42,6 +46,19 @@ export class LoginComponent  implements OnInit {
   admin(){
           this.router.navigate(["./auth/login-admin"]);
       }
+
+      formatos(){
+        this.router.navigate(["formatos"]);
+    }
+
+   convo(){
+      this.router.navigate(["convocatorias"]);
+  }
+
+  conven(){
+    this.router.navigate(["convenios"]);
+}
+
 
   
 

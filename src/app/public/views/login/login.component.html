@@ -1,4 +1,18 @@
+
 <div class="background" >
+
+  <button (click)="formatos()"class="button type1">
+    <span class="btn-txt">Formatos</span>
+  </button>
+  &nbsp;
+  <button (click)="convo()"class="button type1">
+    <span class="btn-txt">Convocatorias</span>
+  </button>
+  &nbsp;
+  <button (click)="conven()" class="button type1">
+    <span class="btn-txt">Convenios</span>
+  </button>
+  
   
   <form [formGroup]="authForm" (submit)="onSubmit(authForm)" class="form_main" action="">
   <p class="heading">Login User</p>
