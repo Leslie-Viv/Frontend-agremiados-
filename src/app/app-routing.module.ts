@@ -5,6 +5,7 @@ import { FormatosComponent } from './components/formatos/formatos.component';
 import { ConvocatoriasComponent } from './components/convocatorias/convocatorias.component';
 import { ConveniosComponent } from './components/convenios/convenios.component';
 import { NuevoAgremiadoComponent } from './components/nuevo-agremiado/nuevo-agremiado.component';
+import { VeragremiadosComponent } from './components/veragremiados/veragremiados.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,9 @@ const routes: Routes = [
   },
   {
     path: 'nuevo-agremiado', component:NuevoAgremiadoComponent
+  },
+  {
+    path: 'ver-agremiado', component:VeragremiadosComponent
   },
   {
     path: '',

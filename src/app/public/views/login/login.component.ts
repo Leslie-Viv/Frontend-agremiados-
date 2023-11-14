@@ -32,6 +32,8 @@ export class LoginComponent  implements OnInit {
           this.cookieService.set("token", data.token);
           this.router.navigate(["/home"]);
         }
+
+  
       });
 
       

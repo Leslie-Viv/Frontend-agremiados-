@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { CookieService} from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthInterceptor } from './core/interceptor/auth.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule,HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule,HttpClientModule, ReactiveFormsModule, FormsModule,ComponentsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, CookieService,{
     provide:HTTP_INTERCEPTORS,
     useClass:AuthInterceptor,

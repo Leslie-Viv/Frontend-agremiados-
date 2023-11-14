@@ -1,75 +1,87 @@
-<form class="form">
+
+<form [formGroup]="Agremiado" class="form" (ngSubmit)="guardar()" >
+  
   <p class="title">Nuevo Agremiado</p>
   <p class="message">Agregue un nuevo agremiado</p>
       <div class="flex">
       <label>
-          <input required="" placeholder="" type="text" class="input">
+          <input formControlName="apellidopaterno" required="" placeholder=""  class="input">
           <span>Apellido Paterno</span>
       </label>
 
       <label>
-          <input required="" placeholder="" type="text" class="input">
+          <input formControlName="apellidomaterno" required="" placeholder=""  class="input">
           <span>Apellido materno</span>
       </label>
 
       
       <label>
-        <input required="" placeholder="" type="text" class="input">
+        <input formControlName="nombres" required="" placeholder="" type="text" class="input">
         <span>Nombre(s)</span>
     </label>
 
   </div>  
   <div class="flex">
     <label>
-        <input required="" placeholder="" type="text" class="input">
+        <input formControlName="NUP" required="" placeholder="" class="input">
         <span>NUP</span>
     </label>
 
     <label>
-        <input required="" placeholder="" type="text" class="input">
+        <input formControlName="NUE" required="" placeholder="" type="text" class="input">
         <span>NUE</span>
-    </label>
+    </label> -->
+    <!-- The second value will be selected initially -->
+    <label class="flex">
+      
+<select formControlName="sexo" name="select" placeholder="Sexo" class="input" >
+  <option value="value1">Hombre</option>
+  <option value="value2">Mujer</option>
+  <option value="value3">No quiero especificar</option>
+</select>
+</label>
+          <!-- <small *ngIf="validaCtrl('category_id')"
+          style="color: red;"
+          >
+            Elije una categoria es obligatorio </small> -->
+     
   
 </div> 
 
 <div class="flex">
   <label>
-      <input required="" placeholder="" type="text" class="input">
+      <input formControlName="RFC" required="" placeholder="" class="input">
       <span>RFC</span>
   </label>
 
   <label>
-      <input required="" placeholder="" type="text" class="input">
+      <input formControlName="NSS" required="" placeholder="" class="input">
       <span>NSS</span>
   </label>
-
 </div> 
 <div class="flex">
   <label>
-      <input required="" placeholder="" type="text" class="input">
+      <input formControlName="fechadenacimiento" required="" placeholder="" type="text" class="input">
       <span>Fecha de nacimiento</span>
   </label>
 
   <label>
-      <input required="" placeholder="" type="text" class="input">
+      <input formControlName="telefono" required="" placeholder="" class="input">
       <span>Telefono</span>
   </label>
 
 </div> 
 <div class="flex">
   <label>
-      <input required="" placeholder="" type="text" class="input">
+      <input formControlName="cuota" required="" placeholder="" class="input">
       <span>Cuota</span>
   </label>
 
-  <label>
-      <input required="" placeholder="" type="text" class="input">
-      <span>Genero</span>
-  </label>
+  
 
 </div> 
  
-  <button class="submit"> Agregar agremiado</button>
+  <button class="submit" type="submit"> Agregar agremiado</button>
   <button class="submit">Regresar al Panel de administrador</button>
   <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
-</form>
+</form> 
