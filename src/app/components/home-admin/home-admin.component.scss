@@ -1,0 +1,22 @@
+.header-background {
+    background: #8574e7; /* Purple background color */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .button-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+
+  .button-grid ion-button {
+    background-color: #673ab7; /* Darker purple button color */
+    border-radius: 25px;
+    color: white; /* Button text color */
+  }
