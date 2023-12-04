@@ -6,9 +6,22 @@ import { ConvocatoriasComponent } from './components/convocatorias/convocatorias
 import { ConveniosComponent } from './components/convenios/convenios.component';
 import { NuevoAgremiadoComponent } from './components/nuevo-agremiado/nuevo-agremiado.component';
 import { VeragremiadosComponent } from './components/veragremiados/veragremiados.component';
+import { LoginComponent } from './auth/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 const routes: Routes = [
+  {
+    // Dirige en automático a Login al inicializar el proyecto
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
@@ -39,13 +52,14 @@ const routes: Routes = [
     path: '',
     redirectTo: 'auth',
     pathMatch: 'full'
-  }
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    ReactiveFormsModule,
+   FormsModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

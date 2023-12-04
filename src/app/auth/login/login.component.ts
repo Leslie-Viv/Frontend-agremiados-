@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { AuthService } from 'src/app/services/auth.service';
 import { LoginService } from 'src/app/services/login.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-login-admin',
-  templateUrl: './login-admin.component.html',
-  styleUrls: ['./login-admin.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginAdminComponent  implements OnInit {
+export class LoginComponent {
 
   NUE: string = '';
   password: string = '';
@@ -21,10 +21,11 @@ export class LoginAdminComponent  implements OnInit {
 
   ngOnInit() {
     this.loginForm! = this.formBuilder.group({
-      NUE: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15)]],
-      password: ['', [Validators.required, Validators.minLength(5)]]
+      NUE: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(15)]],
+      password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
+
   login() {
     const { NUE, password } = this.loginForm.value;
     if (!NUE || !password) {
@@ -104,7 +105,22 @@ export class LoginAdminComponent  implements OnInit {
     return this.loginForm.get('password')?.valid;
   }
 
-  user(){
-    this.router.navigate(["./auth/login"]);
+  convo(){
+    this.router.navigate(["convocatorias"]);
 }
+
+conven(){
+  this.router.navigate(["convenios"]);
 }
+
+formatos(){
+  this.router.navigate(["formatos"]);
+}
+
+
+
+
+
+
+
+}  

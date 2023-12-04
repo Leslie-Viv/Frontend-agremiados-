@@ -9,9 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthInterceptor } from './core/interceptor/auth.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
+import { LoginComponent } from './auth/login/login.component';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, RouterModule,HttpClientModule, ReactiveFormsModule, FormsModule,ComponentsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, CookieService,{
     provide:HTTP_INTERCEPTORS,

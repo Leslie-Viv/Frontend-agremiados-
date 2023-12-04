@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PublicRoutingModule } from './public-routing.module';
-import { LoginComponent } from './views/login/login.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginAdminComponent } from './views/login-admin/login-admin.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginAdminComponent
   ],
   imports: [
     CommonModule,

@@ -5,10 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NuevoAgremiadoComponent } from './nuevo-agremiado/nuevo-agremiado.component';
 import { VeragremiadosComponent } from './veragremiados/veragremiados.component';
+import { HomeAdminComponent } from './home-admin/home-admin.component';
 @NgModule({
     declarations: [
      NuevoAgremiadoComponent,
-     VeragremiadosComponent 
+     VeragremiadosComponent,
+     HomeAdminComponent
     ],
     imports: [
       CommonModule,
@@ -19,7 +21,8 @@ import { VeragremiadosComponent } from './veragremiados/veragremiados.component'
     ],
     exports: [
         NuevoAgremiadoComponent,
-        VeragremiadosComponent
+        VeragremiadosComponent,
+        HomeAdminComponent,
   
     ]
   })
