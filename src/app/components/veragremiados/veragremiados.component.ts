@@ -4,6 +4,8 @@ import jsPDF from 'jspdf';
 import { AgremiadosService } from 'src/app/services/agremiados.service';
 import Swal from 'sweetalert2';
 import { EditaragremiadoComponent } from '../editaragremiado/editaragremiado.component';
+import { AlertController } from '@ionic/angular';
+import { AlertsService } from 'src/app/services/alerts.service';
 
 interface Agremiado {
   id: number;
@@ -32,7 +34,7 @@ export class VeragremiadosComponent implements OnInit {
 
   agremiados: any[] = []; // Ajusta el tipo de datos según la estructura de tus agremiados
 
-  constructor(private agremiadoservice:AgremiadosService) {
+  constructor( private alertS: AlertsService,private alertCtrl: AlertController,private agremiadoservice:AgremiadosService) {
     this.content = {} as ElementRef;
    }
 
@@ -88,5 +90,47 @@ export class VeragremiadosComponent implements OnInit {
     }
   }
 
+
+  async eliminarAgremiado(id: number) {
+    const alert = await this.alertCtrl.create({
+      header: 'Confirmar eliminación',
+      mode: 'ios',
+      message: '¿Seguro que deseas eliminar este agremiado?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (cancel) => {
+            console.log('Cancelado');
+          }
+        }, {
+          text: 'Sí',
+          handler: () => {
+            // Llamada a la función de servicio que envía la solicitud DELETE con el ID del producto
+            this.agremiadoservice.eliminarAgremiado(id).subscribe(
+              (response) => {
+                // Manejar la respuesta exitosa aquí
+                console.log('Agremiado eliminado con éxito', response);
+                this.alertS.generateToast({
+                  duration: 800,
+                  color: 'danger',
+                  icon: 'trash-outline',
+                  message: 'Agremiado eliminado con éxito',
+                  position: 'top',
+                });
+                this.agremiados = this.agremiados.filter(agremiado => agremiado.id !== id);
+              },
+              (error) => {
+                console.error('Error al eliminar el agremiado', error);
+              }
+            );
+          }
+        }
+      ]
+    });
+  
+    await alert.present();
+  }
 
 }
