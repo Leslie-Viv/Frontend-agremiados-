@@ -6,11 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { NuevoAgremiadoComponent } from './nuevo-agremiado/nuevo-agremiado.component';
 import { VeragremiadosComponent } from './veragremiados/veragremiados.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { SolicitudesComponent } from './solicitudes/solicitudes.component';
+import { AgregarsolicitudComponent } from './agregarsolicitud/agregarsolicitud.component';
 @NgModule({
     declarations: [
      NuevoAgremiadoComponent,
      VeragremiadosComponent,
-     HomeAdminComponent
+     HomeAdminComponent,
+     SolicitudesComponent,
+     AgregarsolicitudComponent
     ],
     imports: [
       CommonModule,
@@ -23,6 +27,8 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
         NuevoAgremiadoComponent,
         VeragremiadosComponent,
         HomeAdminComponent,
+        SolicitudesComponent,
+        AgregarsolicitudComponent
   
     ]
   })

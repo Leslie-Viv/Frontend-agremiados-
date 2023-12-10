@@ -1,6 +1,5 @@
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -25,3 +24,78 @@
 #container a {
   text-decoration: none;
 }
+.header-background {
+  background: #8574e7; /* Purple background color */
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.button-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.button-grid ion-button {
+  background-color: #673ab7; /* Darker purple button color */
+  border-radius: 25px;
+  color: white; /* Button text color */
+}
+
+.card {
+  border: 1px solid #ddd; /* Borde ligero */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease; /* Efecto de transición suave */
+}
+
+.card:hover {
+  transform: scale(); /* Escala ligeramente al pasar el ratón */
+}
+
+/* Estilos para el cuerpo de la tarjeta */
+.card-body {
+  padding: 20px;
+}
+
+/* Estilos para el título */
+h2 {
+  color: #673ab7;
+  margin-bottom: 10px; /* Margen inferior para separar el título de los demás elementos */
+}
+
+/* Estilos para el texto descriptivo */
+.text-muted {
+  color: #666;
+}
+
+/* Estilos para el párrafo con apellidos */
+.card-body p:first-of-type {
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Otros estilos... */
+
+/* Estilos para la sección contenedora */
+.container {
+  margin-top: 20px; 
+  text-align: center;
+  position: absolute;
+ 
+  /* Margen superior para separar del contenido superior */
+}
+
+/* Estilos para la sección de padding */
+.py-5 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+
+
+

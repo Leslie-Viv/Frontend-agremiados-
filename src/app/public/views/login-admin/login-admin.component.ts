@@ -47,7 +47,7 @@ export class LoginAdminComponent  implements OnInit {
           this.authS.setLoggedInFlag(true);
 
           if (user.id_rol === 1) {
-            console.log('¡Inicio de sesión exitoso!');
+            console.log('¡Se inicio sesion correctamente!');
             this.router.navigate(['/home-admin']);
             // Swal.fire({
             //   icon: 'success',
@@ -56,7 +56,7 @@ export class LoginAdminComponent  implements OnInit {
             //   showConfirmButton: true
             // });
           } else if (user.id_rol === 2) {
-            console.log('¡Inicio de sesión exitoso!');
+            console.log('¡Se inicio sesion correctamente!');
             this.router.navigate(['/home']);
             // Swal.fire({
             //   icon: 'success',
@@ -65,7 +65,7 @@ export class LoginAdminComponent  implements OnInit {
             //   showConfirmButton: true
             // });
           } else {
-            console.log('Rol no reconocido');
+            console.log('No se reconoce el rol');
             Swal.fire({
               icon: 'error',
               title: '¡Error!',
@@ -75,11 +75,11 @@ export class LoginAdminComponent  implements OnInit {
           }
         },
         (error) => {
-          console.error('Credenciales incorrectas', error);
+          console.error('Hay un error en tus credenciales', error);
           Swal.fire({
             icon: 'error',
             title: '¡Error!',
-            text: 'Credenciales incorrectas',
+            text: 'Hay un error en tus credenciales',
             showConfirmButton: true
           });
         }

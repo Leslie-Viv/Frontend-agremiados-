@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  Router } from '@angular/router';
 import { AgremiadosService } from 'src/app/services/agremiados.service';
 
 @Component({
@@ -13,29 +14,38 @@ export class NuevoAgremiadoComponent  implements OnInit {
 
   constructor(
     private agremiadoservice:AgremiadosService,
-    private fb:FormBuilder) { 
+    private fb:FormBuilder,
+    private router:Router) { 
     this.Agremiado = this.fb.group({
       apellidopaterno:['',Validators.required],
         apellidomaterno:['',Validators.required],
         nombres:['',Validators.required],
-         sexo:['',Validators.required],
+         sexo:[''],
          NUP:['',Validators.required],
          NUE:['',Validators.required],
          RFC:['',Validators.required],
          NSS:['',Validators.required],
         fechadenacimiento:['',Validators.required],
         telefono:['',Validators.required],
-         cuota:[0,Validators.required]
+         cuota:['',Validators.required]
     })
   }
 
   ngOnInit() {}
 
-  guardar(){
-    const data=this.Agremiado.value;
-    this.agremiadoservice.nuevoagremiado(data).subscribe(res=>{
-      console.log(res);
-    })
+  
+  newAgremiado() {
+    const infoNewAgremiado = this.Agremiado.value;
+
+    this.agremiadoservice.nuevoagremiado(infoNewAgremiado).subscribe(
+      response => {
+        console.log('Agremiado agregado correctamente', response);
+        this.router.navigate(['/homeAdmin']);
+      },
+      error => {
+        console.error('Error al agregar agremiado', error);
+      }
+    );
   }
 
 }

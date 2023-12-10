@@ -1,5 +1,5 @@
 
-<form [formGroup]="Agremiado" class="form" (ngSubmit)="guardar()" >
+<form [formGroup]="Agremiado" class="form" (ngSubmit)="newAgremiado()" >
   
   <p class="title">Nuevo Agremiado</p>
   <p class="message">Agregue un nuevo agremiado</p>
@@ -30,16 +30,14 @@
     <label>
         <input formControlName="NUE" required="" placeholder="" type="text" class="input">
         <span>NUE</span>
-    </label> -->
+    </label> 
     <!-- The second value will be selected initially -->
-    <label class="flex">
-      
-<select formControlName="sexo" name="select" placeholder="Sexo" class="input" >
-  <option value="value1">Hombre</option>
-  <option value="value2">Mujer</option>
-  <option value="value3">No quiero especificar</option>
-</select>
-</label>
+    <ion-label><strong>Sexo:</strong></ion-label>
+    <ion-select formControlName="sexo" id="sexo" fill="outline" placeholder="Seleccione el sexo">
+      <ion-select-option value="Hombre">Masculino</ion-select-option>
+      <ion-select-option value="Mujer">Femenino</ion-select-option>
+      <ion-select-option value="No_especificado">Prefiero no decirlo</ion-select-option>
+    </ion-select>
           <!-- <small *ngIf="validaCtrl('category_id')"
           style="color: red;"
           >

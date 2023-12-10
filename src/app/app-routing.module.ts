@@ -8,6 +8,8 @@ import { NuevoAgremiadoComponent } from './components/nuevo-agremiado/nuevo-agre
 import { VeragremiadosComponent } from './components/veragremiados/veragremiados.component';
 import { LoginComponent } from './auth/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SolicitudesComponent } from './components/solicitudes/solicitudes.component';
+import { AgregarsolicitudComponent } from './components/agregarsolicitud/agregarsolicitud.component';
 
 
 
@@ -25,6 +27,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'solicitudes',
+    component: SolicitudesComponent
   },
   {
     path: 'auth',
@@ -47,6 +53,10 @@ const routes: Routes = [
   },
   {
     path: 'ver-agremiado', component:VeragremiadosComponent
+  },
+
+  {
+    path: 'agregar-solicitud', component:AgregarsolicitudComponent
   },
   {
     path: '',
