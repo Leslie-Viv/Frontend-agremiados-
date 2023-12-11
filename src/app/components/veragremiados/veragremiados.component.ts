@@ -3,9 +3,9 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { AgremiadosService } from 'src/app/services/agremiados.service';
 import Swal from 'sweetalert2';
-import { EditaragremiadoComponent } from '../editaragremiado/editaragremiado.component';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { AlertsService } from 'src/app/services/alerts.service';
+
 
 interface Agremiado {
   id: number;
@@ -34,7 +34,7 @@ export class VeragremiadosComponent implements OnInit {
 
   agremiados: any[] = []; // Ajusta el tipo de datos según la estructura de tus agremiados
 
-  constructor( private alertS: AlertsService,private alertCtrl: AlertController,private agremiadoservice:AgremiadosService) {
+  constructor(  private modalCtrl: ModalController,private alertS: AlertsService,private alertCtrl: AlertController,private agremiadoservice:AgremiadosService) {
     this.content = {} as ElementRef;
    }
 
@@ -133,4 +133,5 @@ export class VeragremiadosComponent implements OnInit {
     await alert.present();
   }
 
+ 
 }

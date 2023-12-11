@@ -17,4 +17,6 @@ export class ConveniosComponent  implements OnInit {
       this.router.navigate(['/login']);
     }
 
+    
+
 }

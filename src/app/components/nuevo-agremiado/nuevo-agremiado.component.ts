@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {  Router } from '@angular/router';
+import { ModalController} from '@ionic/angular';
 import { AgremiadosService } from 'src/app/services/agremiados.service';
 
 @Component({
@@ -9,13 +10,17 @@ import { AgremiadosService } from 'src/app/services/agremiados.service';
   styleUrls: ['./nuevo-agremiado.component.scss'],
 })
 export class NuevoAgremiadoComponent  implements OnInit {
+  edit: boolean = false;
+  AgremiadoId = 0;
 
   Agremiado!:FormGroup;
 
   constructor(
+    private modalCtrl:ModalController,
     private agremiadoservice:AgremiadosService,
     private fb:FormBuilder,
-    private router:Router) { 
+    private router:Router) {
+      
     this.Agremiado = this.fb.group({
       apellidopaterno:['',Validators.required],
         apellidomaterno:['',Validators.required],
@@ -29,9 +34,12 @@ export class NuevoAgremiadoComponent  implements OnInit {
         telefono:['',Validators.required],
          cuota:['',Validators.required]
     })
+
+
   }
 
   ngOnInit() {}
+  titulo = 'Nuevo Producto';
 
   
   newAgremiado() {
@@ -48,4 +56,12 @@ export class NuevoAgremiadoComponent  implements OnInit {
     );
   }
 
+  async close() {
+    await this.modalCtrl.dismiss();
+  }
+
+  addEditar(){
+    this.edit = !this.edit;
+    
+}
 }
