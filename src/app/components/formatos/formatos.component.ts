@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formatos',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormatosComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,) { }
 
   ngOnInit() {}
+
+  logout() {
+    this.router.navigate(['/login']);
+  }
 
 }

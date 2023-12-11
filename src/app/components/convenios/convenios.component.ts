@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-convenios',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConveniosComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,) { }
 
-  ngOnInit() {}
+    ngOnInit(): void {
+    }
+
+    logout() {
+      this.router.navigate(['/login']);
+    }
 
 }
